@@ -4,62 +4,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Monitoring Project</title>
+    <title>AWS Monitoring Project</title>
+
     <style>
-        body {
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
             font-family: Arial, sans-serif;
-            background: #f1f5ff;
+            background: #101827;
+            color: white;
             text-align: center;
         }
+
         header {
-            background: #273c75;
-            color: white;
             padding: 25px;
+            background: #1d293b;
         }
-        main {
-            margin: 80px auto;
-            padding: 35px;
-            max-width: 600px;
-            background: white;
-            border-radius: 15px;
+
+        header h1 {
+            color: #a78bfa;
         }
-        h2 {
-            color: #273c75;
+
+        .container {
+            padding: 80px 20px;
         }
+
+        .container h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .container p {
+            color: #cbd5e1;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .status {
+            display: inline-block;
+            background: #064e3b;
+            color: #6ee7b7;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+
         button {
-            background: #273c75;
-            color: white;
+            margin-top: 30px;
+            padding: 14px 25px;
+            background: #8b5cf6;
             border: none;
-            padding: 13px 25px;
-            border-radius: 7px;
+            border-radius: 8px;
+            color: white;
             cursor: pointer;
+            font-size: 16px;
         }
+
         footer {
-            padding: 20px;
-            color: #555;
+            padding: 25px;
+            background: #1d293b;
+            color: #94a3b8;
         }
     </style>
 </head>
+
 <body>
 
-<header>
-    <h1>My First AWS Website</h1>
-    <p>Website Monitoring Project</p>
-</header>
+    <header>
+        <h1>My AWS Monitoring Website</h1>
+    </header>
 
-<main>
-    <h2>Welcome!</h2>
-    <p>This website is hosted using AWS Amplify.</p>
-    <p>Website availability is monitored using SigNoz.</p>
-    <button onclick="alert('Website is working!')">
-        Test Website
-    </button>
-</main>
+    <div class="container">
+        <h2>Welcome to My Website!</h2>
 
-<footer>
-    <p>My DevOps Practice Project - 2026</p>
-</footer>
+        <p>
+            This website is deployed using AWS Amplify
+            and monitored using SigNoz.
+        </p>
+
+        <div class="status">
+            Website Status: ONLINE
+        </div>
+
+        <br>
+
+        <button onclick="checkStatus()">
+            Check Website
+        </button>
+
+        <p id="result"></p>
+    </div>
+
+    <footer>
+        AWS Amplify + SigNoz Monitoring Project
+    </footer>
+
+    <script>
+        function checkStatus() {
+            document.getElementById("result").innerHTML =
+                "Website is responding successfully!";
+        }
+    </script>
 
 </body>
 </html>
